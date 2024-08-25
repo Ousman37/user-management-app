@@ -72,31 +72,29 @@ This project is a full-stack User Management Application, showcasing a variety o
 
 ## **Project Structure**
 
-user-management-app/
-├── server/                        # Backend code
-│   ├── config/                    # Configuration files (e.g., JWT Secret)
-│   ├── middleware/                # Authentication middleware
-│   ├── models/                    # Mongoose models
-│   ├── routes/                    # API routes
-│   └── server.js                  # Main server file
-│
-├── user-management-frontend/      # Frontend code
-│   ├── public/                    # Public assets
-│   ├── src/
-│   │   ├── api/                   # API service files
-│   │   ├── components/            # React components
-│   │   │   ├── form/              # Login and Register components
-│   │   │   ├── home/              # Home component
-│   │   │   ├── modal/             # Login/Register modal component
-│   │   │   ├── navigation/        # Navbar component
-│   │   │   └── profile/           # Profile component
-│   │   ├── App.js                 # Main React component
-│   │   ├── index.js               # Entry point for React
-│   │   └── index.css              # Global styles
-│   └── package.json               # Project dependencies and scripts
-│
-├── README.md                      # Project documentation
-└── .gitignore                     # Files and directories to ignore in Git
+- **user-management-app/**
+  - **server/** - Backend code
+    - **config/** - Configuration files (e.g., JWT Secret)
+    - **middleware/** - Authentication middleware
+    - **models/** - Mongoose models
+    - **routes/** - API routes
+    - `server.js` - Main server file
+  - **user-management-frontend/** - Frontend code
+    - **public/** - Public assets
+    - **src/** - Source code
+      - **api/** - API service files
+      - **components/** - React components
+        - **form/** - Login and Register components
+        - **home/** - Home component
+        - **modal/** - Login/Register modal component
+        - **navigation/** - Navbar component
+        - **profile/** - Profile component
+      - `App.js` - Main React component
+      - `index.js` - Entry point for React
+      - `index.css` - Global styles
+  - `package.json` - Project dependencies and scripts
+  - `README.md` - Project documentation
+  - `.gitignore` - Files and directories to ignore in Git
 
 ## **Setup and Installation**
 
