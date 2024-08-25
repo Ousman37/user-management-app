@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![User Management App Screenshot](https://github.com/Ousman37/user-management-app/blob/main/Screenshot_2024-08-25_at_15.26.14.png)
+![User Management App Screenshot](https://raw.githubusercontent.com/Ousman37/user-management-app/main/Screenshot_2024-08-25_at_15.26.14.png)
 
 This project is a full-stack User Management Application, showcasing a variety of development skills including front-end and back-end technologies. The app allows users to register, log in, view and manage profiles, and interact with protected routes.
 
