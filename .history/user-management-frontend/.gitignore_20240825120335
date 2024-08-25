@@ -5,7 +5,9 @@
 /.pnp
 .pnp.js
 
-.history/
+#history
+.history
+
 
 # testing
 /coverage
