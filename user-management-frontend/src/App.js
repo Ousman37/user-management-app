@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/navigation/Navbar";
 import Home from "./components/home/Home";
 import Profile from "./components/profile/Profile";
@@ -32,6 +34,8 @@ function App() {
           onSwitch={setModalContent}
         />
       )}
+      {/* ToastContainer should be placed here to display toast notifications */}
+      <ToastContainer />
     </>
   );
 }
@@ -41,7 +45,7 @@ export default App;
 // import { Routes, Route } from "react-router-dom";
 // import Navbar from "./components/navigation/Navbar";
 // import Home from "./components/home/Home";
-// import ProtectedPage from "./components/profile/Profile";
+// import Profile from "./components/profile/Profile";
 // import LoginRegisterModal from "./components/modal/LoginRegisterModal";
 
 // function App() {
@@ -62,7 +66,7 @@ export default App;
 //       <Navbar openModal={openModal} />
 //       <Routes>
 //         <Route path="/" element={<Home openModal={openModal} />} />
-//         <Route path="/protected" element={<ProtectedPage />} />
+//         <Route path="/profile" element={<Profile />} />
 //       </Routes>
 //       {isModalOpen && (
 //         <LoginRegisterModal
@@ -71,27 +75,6 @@ export default App;
 //           onSwitch={setModalContent}
 //         />
 //       )}
-//     </>
-//   );
-// }
-
-// export default App;
-// import React from "react";
-// import { Routes, Route } from "react-router-dom";
-// import Home from "./components/home/Home";
-// // import Register from "./components/form/Register";
-// import ProtectedPage from "./components/protected/ProtectedPage";
-// import Navbar from "./components/navigation/Navbar";
-
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         {/* <Route path="/register" element={<Register />} /> */}
-//         <Route path="/protected" element={<ProtectedPage />} />
-//       </Routes>
 //     </>
 //   );
 // }
