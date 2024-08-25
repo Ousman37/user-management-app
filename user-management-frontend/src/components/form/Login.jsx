@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login({ onClose }) {
   const [email, setEmail] = useState("");
@@ -16,10 +18,12 @@ function Login({ onClose }) {
         password,
       });
       localStorage.setItem("token", response.data.token);
+      toast.success("Logged in successfully!"); // Success toast notification
       navigate("/protected");
       onClose(); // Close the modal on successful login
     } catch (error) {
       setError("Invalid email or password");
+      toast.error("Login failed. Please try again."); // Error toast notification
     }
   };
 

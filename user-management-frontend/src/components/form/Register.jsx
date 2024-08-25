@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register({ onClose }) {
   const [name, setName] = useState("");
@@ -17,10 +19,12 @@ function Register({ onClose }) {
         email,
         password,
       });
+      toast.success("Registration successful! Please log in."); // Success toast notification
       navigate("/login");
       onClose(); // Close the modal on successful registration
     } catch (error) {
       setError("Error in registration");
+      toast.error("Registration failed. Please try again."); // Error toast notification
     }
   };
 
