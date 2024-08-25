@@ -1,32 +1,42 @@
 // src/components/navigation/Navbar.js
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import LoginRegisterModal from "../modal/LoginRegisterModal";
 
 function Navbar() {
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState("login");
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Add a confirmation dialog before logging out
-    if (window.confirm("Are you sure you want to logout?")) {
-      localStorage.removeItem("token"); // Remove the token from local storage
-      navigate("/login"); // Redirect to the login page
-    }
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
-  const isLoggedIn = !!localStorage.getItem("token"); // Check if the user is logged in
+  const isLoggedIn = !!localStorage.getItem("token");
+
+  const openModal = (content) => {
+    setModalContent(content);
+    setShowModal(true);
+  };
 
   return (
     <nav className="bg-blue-500 p-4">
       <div className="container mx-auto flex justify-between">
-        <div className="text-white font-bold">User Management App</div>
+        <div
+          className="text-white font-bold cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          User Management App
+        </div>
         <div className="space-x-4">
           <Link to="/" className="text-white">
             Home
           </Link>
           {isLoggedIn ? (
             <>
-              <Link to="/protected" className="text-white">
-                Protected
+              <Link to="/profile" className="text-white">
+                Profile
               </Link>
               <button
                 onClick={handleLogout}
@@ -36,12 +46,22 @@ function Navbar() {
               </button>
             </>
           ) : (
-            <Link to="/login" className="text-white bg-blue-700 px-4 py-2 rounded-md">
+            <button
+              onClick={() => openModal("login")}
+              className="text-white bg-blue-700 px-4 py-2 rounded-md"
+            >
               Account
-            </Link>
+            </button>
           )}
         </div>
       </div>
+      {showModal && (
+        <LoginRegisterModal
+          content={modalContent}
+          onClose={() => setShowModal(false)}
+          onSwitch={(content) => setModalContent(content)}
+        />
+      )}
     </nav>
   );
 }
